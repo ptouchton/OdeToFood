@@ -10,11 +10,14 @@ namespace OdeToFood.Controllers
     {
         //
         // GET: /Cuisine/
-
-        public ActionResult Search()
+        [HttpGet] //Action Selector 
+        //[Authorize] //Action Filter
+        public ActionResult Search(string name)
         {
-            //var message = Server.HtmlEncode(name);
-            return Content("Hello");
+            var message = Server.HtmlEncode(name);
+            //return RedirectToAction("Index","Home", new {name = name});
+            //return Json(new {Message = message, Name = "Paul"}, JsonRequestBehavior.AllowGet);
+            return Content(message);
         }
 
     }
