@@ -60,7 +60,8 @@ namespace OdeToFood.Controllers
 
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = _reviews.Single(r => r.Id == id);
+            return View(model);
         }
 
         //
@@ -69,16 +70,15 @@ namespace OdeToFood.Controllers
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add update logic here
 
+            var review = _reviews.Single(r => r.Id == id);
+            if (TryUpdateModel(review))
+            {
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(review);
+
         }
 
         //
@@ -119,7 +119,7 @@ namespace OdeToFood.Controllers
             },
             new RestaurantReview
             {
-                Id = 1,
+                Id = 2,
                 Name = "Literal Bella",
                 City = "Portland",
                 Country = "OR",
@@ -127,7 +127,7 @@ namespace OdeToFood.Controllers
             },
             new RestaurantReview
             {
-                Id = 1,
+                Id = 3,
                 Name = "Ellie's Tavern",
                 City = "Beaverton",
                 Country = "OR",

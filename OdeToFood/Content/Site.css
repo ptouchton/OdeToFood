@@ -5,9 +5,9 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #ccc;
     border-top: solid 10px #000;
-    color: #333;
+    color: #000;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
@@ -37,7 +37,7 @@ nav, section {
 }
 
 mark {
-    background-color: #a6dbed;
+    background-color: transparent;
     padding-left: 5px;
     padding-right: 5px;
 }
@@ -105,13 +105,13 @@ h5, h6 {
 }
 
     .main-content {
-        background: url("../Images/accent.png") no-repeat;
+        
         padding-left: 10px;
         padding-top: 30px;
     }
 
     .featured + .main-content {
-        background: url("../Images/heroAccent.png") no-repeat;
+        
     }
 
 header .content-wrapper {
@@ -213,12 +213,8 @@ ul#menu {
 }
 
     .featured .content-wrapper {
-        background-color: #7ac0da;
-        background-image: -ms-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -o-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #7ac0da), color-stop(1, #a4d4e6));
-        background-image: -webkit-linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
-        background-image: linear-gradient(left, #7ac0da 0%, #a4d4e6 100%);
+        background-color: #cccc99;
+       
         color: #3e5667;
         padding: 20px 40px 30px 40px;
     }
@@ -753,4 +749,24 @@ tr.pager td {
         footer p {
             margin: 0;
         }
+}
+
+
+.review 
+{    
+    padding: 2px;
+    border-bottom: 2px solid black; 
+    padding-bottom: 10px;   
+}
+
+.review h4
+{
+    color: Maroon;
+    padding: 5px;
+    background: #cccc99
+}
+
+.review p 
+{
+    font-size: .8em;    
 }
