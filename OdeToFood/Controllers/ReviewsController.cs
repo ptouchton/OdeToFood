@@ -7,134 +7,143 @@ using OdeToFood.Models;
 
 namespace OdeToFood.Controllers
 {
-    public class ReviewsController : Controller
-    {
-        //
-        // GET: /Reviews/
+    //public class ReviewsController : Controller
+    //{
+    //    [ChildActionOnly]
+    //    public ActionResult BestReview()
+    //    {
+    //        var best = from r in _reviews
+    //            orderby r.Rating descending
+    //            select r;
 
-        public ActionResult Index()
-        {
-            var model =
-                from r in _reviews
-                orderby r.City
-                select r;
-            return View(model);
-        }
+    //        return PartialView("_Review", best.First());
+    //    }
+    //    //
+    //    // GET: /Reviews/
 
-        //
-        // GET: /Reviews/Details/5
+    //    public ActionResult Index()
+    //    {
+    //        var model =
+    //            from r in _reviews
+    //            //orderby r.City
+    //            select r;
+    //        return View(model);
+    //    }
 
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
+    //    //
+    //    // GET: /Reviews/Details/5
 
-        //
-        // GET: /Reviews/Create
+    //    public ActionResult Details(int id)
+    //    {
+    //        return View();
+    //    }
 
-        public ActionResult Create()
-        {
-            return View();
-        }
+    //    //
+    //    // GET: /Reviews/Create
 
-        //
-        // POST: /Reviews/Create
+    //    public ActionResult Create()
+    //    {
+    //        return View();
+    //    }
 
-        [HttpPost]
-        public ActionResult Create(FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add insert logic here
+    //    //
+    //    // POST: /Reviews/Create
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+    //    [HttpPost]
+    //    public ActionResult Create(FormCollection collection)
+    //    {
+    //        try
+    //        {
+    //            // TODO: Add insert logic here
 
-        //
-        // GET: /Reviews/Edit/5
+    //            return RedirectToAction("Index");
+    //        }
+    //        catch
+    //        {
+    //            return View();
+    //        }
+    //    }
 
-        public ActionResult Edit(int id)
-        {
-            var model = _reviews.Single(r => r.Id == id);
-            return View(model);
-        }
+    //    //
+    //    // GET: /Reviews/Edit/5
 
-        //
-        // POST: /Reviews/Edit/5
+    //    public ActionResult Edit(int id)
+    //    {
+    //        var model = _reviews.Single(r => r.Id == id);
+    //        return View(model);
+    //    }
 
-        [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
-        {
+    //    //
+    //    // POST: /Reviews/Edit/5
 
-            var review = _reviews.Single(r => r.Id == id);
-            if (TryUpdateModel(review))
-            {
-                return RedirectToAction("Index");
-            }
+    //    [HttpPost]
+    //    public ActionResult Edit(int id, FormCollection collection)
+    //    {
 
-            return View(review);
+    //        var review = _reviews.Single(r => r.Id == id);
+    //        if (TryUpdateModel(review))
+    //        {
+    //            return RedirectToAction("Index");
+    //        }
 
-        }
+    //        return View(review);
 
-        //
-        // GET: /Reviews/Delete/5
+    //    }
 
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
+    //    //
+    //    // GET: /Reviews/Delete/5
 
-        //
-        // POST: /Reviews/Delete/5
+    //    public ActionResult Delete(int id)
+    //    {
+    //        return View();
+    //    }
 
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+    //    //
+    //    // POST: /Reviews/Delete/5
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+    //    [HttpPost]
+    //    public ActionResult Delete(int id, FormCollection collection)
+    //    {
+    //        try
+    //        {
+    //            // TODO: Add delete logic here
 
-        private List<RestaurantReview> _reviews = new List<RestaurantReview>
-        {
-            new RestaurantReview
-            {
-                Id = 1,
-                Name = "City Grille",
-                City = "London",
-                Country = "UK",
-                Rating = 10
-            },
-            new RestaurantReview
-            {
-                Id = 2,
-                Name = "Literal Bella",
-                City = "Portland",
-                Country = "OR",
-                Rating = 10
-            },
-            new RestaurantReview
-            {
-                Id = 3,
-                Name = "Ellie's Tavern",
-                City = "Beaverton",
-                Country = "OR",
-                Rating = 10
-            },
+    //            return RedirectToAction("Index");
+    //        }
+    //        catch
+    //        {
+    //            return View();
+    //        }
+    //    }
+
+    //    private List<RestaurantReview> _reviews = new List<RestaurantReview>
+    //    {
+    //        new RestaurantReview
+    //        {
+    //            Id = 1,
+    //            Name = "City Grille",
+    //            City = "London",
+    //            Country = "UK",
+    //            Rating = 9
+    //        },
+    //        new RestaurantReview
+    //        {
+    //            Id = 2,
+    //            Name = "Literal Bella",
+    //            City = "Portland",
+    //            Country = "OR",
+    //            Rating = 10
+    //        },
+    //        new RestaurantReview
+    //        {
+    //            Id = 3,
+    //            Name = "Ellie's Tavern",
+    //            City = "Beaverton",
+    //            Country = "OR",
+    //            Rating = 8
+    //        },
 
 
-        };
-    }
+    //    };
+    //}
 }
