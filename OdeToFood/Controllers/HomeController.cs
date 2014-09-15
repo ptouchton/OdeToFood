@@ -24,9 +24,11 @@ namespace OdeToFood.Controllers
             //                CountOfReviews = r.Reviews.Count()
             //            };
 
+            var test = searchTerm;
             var model = _db.Restaurants.OrderByDescending(r => r.Reviews.Average(review => review.Rating))
                            .Take(10)
-                           .Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
+                           //.Where(r => searchTerm == null || r.Name.StartsWith(searchTerm))
+                           .Where(r => r.Name.StartsWith(test))
                            .Select(r => new RestaurantListViewModel
                                     {
                                         Id = r.Id,

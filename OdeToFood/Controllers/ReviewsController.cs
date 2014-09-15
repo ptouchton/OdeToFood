@@ -14,9 +14,9 @@ namespace OdeToFood.Controllers
         //
         // GET: /Reviews/
 
-        public ActionResult Index(int restaurantId)
+        public ActionResult Index(int? restaurantId)
         {
-            Restaurant restaurant = _db.Restaurants.Find(restaurantId);
+            Restaurant restaurant = restaurantId != null ? _db.Restaurants.Find(restaurantId) : _db.Restaurants.FirstOrDefault();
             if (restaurant == null)
             {
                 return HttpNotFound();
@@ -62,5 +62,13 @@ namespace OdeToFood.Controllers
             return View(review);
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (_db != null)
+            {
+                _db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }

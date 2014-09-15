@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/themes/base/css")
         @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")        
+        @Scripts.Render("~/bundles/modernizr")       
+
     </head>
     <body>
         <header>
@@ -29,7 +30,6 @@
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Reviews", "Index", "reviews")</li>
                              <li>@Html.ActionLink("Restaurants", "Index", "Restaurant")</li>
                         </ul>
                     </nav>
@@ -53,7 +53,7 @@
             </div>
         </footer>
 
-        @Scripts.Render("~/bundles/otf")
+        @Scripts.Render("~/bundles/jQuery")
         @RenderSection("scripts", required: false)
     </body>
 </html>
