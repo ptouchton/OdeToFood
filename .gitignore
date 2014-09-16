@@ -2,5 +2,5 @@
 /*.suo
 /OdeToFood/bin
 /OdeToFood/obj
-/OdeToFood.Tests/bin
-/OdeToFood.Tests/obj
+/OdeToFood.Tests/bin/
+/OdeToFood.Tests/obj/
