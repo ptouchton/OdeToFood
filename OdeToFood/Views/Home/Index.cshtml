@@ -3,20 +3,15 @@
     ViewBag.Title = "Home Page";
 }
 
-<form method="get" action="@Url.Action("Index")"
-       data-otf-ajax ="true" data-otf-target="#restaurantList">
+@*@Ajax.BeginForm(new AjaxOptions { HttpMethod="Get",
+                                  InsertionMode= InsertionMode.Replace,
+                                  UpdateTargetId="restaurantList"})*@
+<form method="get" action="/home/Index/"
+      data-otf-target="#restaurantList"
+      data-otf-ajax="true">
     <input type="text" name="searchTerm" />
     <input type="submit" value="Search By Name" />
 </form>
 
-@*@using (@Ajax.BeginForm(new AjaxOptions { HttpMethod="Get",
-                                  InsertionMode= InsertionMode.Replace,
-                                  UpdateTargetId="RestaurantList"}))
-{
-    <input type="text"  name="searchTerm" data-otf-autocomplete="@Url.Action("AutoComplete")" />
-    <input type="submit" value="Search By Name"/>
-}*@
 
-@{
-    Html.RenderPartial("_Restaurants", model: Model);
-}
+@Html.Partial("_Restaurants", Model);
