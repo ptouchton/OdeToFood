@@ -3,22 +3,15 @@
     ViewBag.Title = "Home Page";
 }
 
-@Ajax.BeginForm(new AjaxOptions { HttpMethod="Get",
+@*@Ajax.BeginForm(new AjaxOptions { HttpMethod="Get",
                                   InsertionMode= InsertionMode.Replace,
-                                  UpdateTargetId="RestaurantList"})
-    <input type="text"  name="searchTerm" />
-    <input type="submit" value="Search By Name"/>
+                                  UpdateTargetId="restaurantList"})*@
+<form method="get" action="/home/Index/"
+      data-otf-target="#restaurantList"
+      data-otf-ajax="true">
+    <input type="text" name="searchTerm" />
+    <input type="submit" value="Search By Name" />
+</form>
 
 
-<div id="RestaurantList">
-    @foreach (var item in Model)
-    {
-        <div>
-            <h4>@item.Name</h4>
-            <div>@item.City,@item.Country</div>
-            <div>Reviews: @item.CountOfReviews</div>
-            <hr />
-        </div>
-
-    }
-</div>
+@Html.Partial("_Restaurants", Model);

@@ -36,6 +36,14 @@ namespace OdeToFood.Controllers
                                         Country = r.Country,
                                         CountOfReviews = r.Reviews.Count()
                                     });
+            var test = false;
+
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Restaurants", model);
+            }
+
+            //if (test) return PartialView("_Restaurants", model);
             return View(model);
         }
 
