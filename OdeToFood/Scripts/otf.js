@@ -50,7 +50,7 @@
         {
             url: $a.attr("href"),
             type: "get",
-            data: $(form).serialize()
+            data: $("form").serialize()
 
         };
 

@@ -56,6 +56,7 @@ namespace OdeToFood.Controllers
             return View(model);
         }
 
+        [Authorize]
         public ActionResult About()
         {
            var myModel = new AboutModel();
